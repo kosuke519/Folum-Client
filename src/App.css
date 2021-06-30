@@ -254,3 +254,18 @@ span {
 .like {
   padding-left: 220px;
 }
+
+/*   スマートフォン　　*/
+
+@media (max-width: 600px) {
+  .App {
+    width: 100%;
+  }
+
+  .navbar {
+    height: 70px;
+    font-size: 1px;
+    margin-bottom: 30px;
+    display: flex;
+  }
+}
