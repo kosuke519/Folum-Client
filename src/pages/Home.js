@@ -17,7 +17,7 @@ function Home() {
       history.push("login");
     } else {
       axios
-        .get("http://localhost:3001/Posts", {
+        .get("https://forum-5.herokuapp.com/Posts", {
           headers: { accessToken: localStorage.getItem("accessToken") },
         })
         .then((response) => {
@@ -34,7 +34,7 @@ function Home() {
   const likePost = (postId) => {
     axios
       .post(
-        "http://localhost:3001/likes",
+        "https://forum-5.herokuapp.com/likes",
         { PostId: postId },
         { headers: { accessToken: localStorage.getItem("accessToken") } }
       )

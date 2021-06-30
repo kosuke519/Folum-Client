@@ -13,7 +13,7 @@ function CreatePost() {
   };
 
   useEffect(() => {
-    if (!localStorage.getItem("accessToken")) {
+    if (!localStorage.getItem) {
       history.push("/login");
     }
   }, []);
@@ -25,7 +25,7 @@ function CreatePost() {
 
   const onSubmit = (data) => {
     axios
-      .post("http://localhost:3001/Posts", data, {
+      .post("https://forum-5.herokuapp.com/posts", data, {
         headers: { accessToken: localStorage.getItem("accessToken") },
       })
       .then((response) => {
