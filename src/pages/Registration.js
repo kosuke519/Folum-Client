@@ -11,8 +11,14 @@ function Registration() {
 
   let history = useHistory("");
   const validationSchema = Yup.object().shape({
-    username: Yup.string().min(3).max(15).required(),
-    password: Yup.string().min(8).max(15).required(),
+    username: Yup.string()
+      .min(3, "3文字以上で入力してください")
+      .max(15, "15文字以下で入力してください")
+      .required("ユーザー名を入力してください"),
+    password: Yup.string()
+      .min(8, "8文字以上で入力してください")
+      .max(15, "15文字以下で入力してください")
+      .required("パスワードを入力してください"),
   });
 
   const onSubmit = (data) => {
