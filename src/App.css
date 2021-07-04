@@ -103,6 +103,15 @@
 .unlikeBtn {
   color: silver;
 }
+
+/*///   登録画面       /// */
+.formic {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 24px;
+}
+
 /*///   投稿フォーム /// */
 
 .formContainer {
@@ -113,7 +122,6 @@
   border: 5px solid cornflowerblue;
   width: 500px;
   padding: 20px;
-  height: auto;
   border-radius: 5px;
 }
 
@@ -263,13 +271,19 @@ span {
   }
 
   .navbar {
-    justify-content: flex-start;
-    height: 70px;
-    font-size: 11px;
     margin-bottom: 30px;
+    font-size: 5px;
+  }
+
+  .navUser {
+    margin-left: 45px;
   }
 
   .formContainer {
     width: 90%;
+  }
+
+  .logout {
+    height: 20px;
   }
 }

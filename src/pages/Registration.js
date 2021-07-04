@@ -27,13 +27,13 @@ function Registration() {
     });
   };
   return (
-    <div>
+    <div className="formContainer">
       <Formik
         initialValues={initialValues}
         onSubmit={onSubmit}
         validationSchema={validationSchema}
       >
-        <Form className="formContainer">
+        <Form className="formic">
           <label>ユーザーネーム</label>
           <ErrorMessage name="username" component="span" />
           <Field

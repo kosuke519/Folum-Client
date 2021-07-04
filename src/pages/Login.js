@@ -33,6 +33,7 @@ function Login() {
       <input
         id="inputCreatePost"
         type="text"
+        placeholder="ユーザーネームを入力してください"
         onChange={(event) => {
           setUsername(event.target.value);
         }}
@@ -41,6 +42,7 @@ function Login() {
       <input
         id="inputCreatePost"
         type="password"
+        placeholder="パスワードを入力してください"
         onChange={(event) => {
           setPassword(event.target.value);
         }}
