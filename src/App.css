@@ -258,14 +258,14 @@ span {
 /*   スマートフォン　　*/
 
 @media (max-width: 600px) {
-  .App {
-    width: 100%;
-  }
-
   .navbar {
     height: 70px;
-    font-size: 1px;
+    font-size: 5px;
     margin-bottom: 30px;
     display: flex;
+  }
+
+  .formContainer {
+    width: 100px;
   }
 }
