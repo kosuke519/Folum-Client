@@ -258,14 +258,18 @@ span {
 /*   スマートフォン　　*/
 
 @media (max-width: 600px) {
+  .App {
+    width: 100%;
+  }
+
   .navbar {
+    justify-content: flex-start;
     height: 70px;
-    font-size: 5px;
+    font-size: 11px;
     margin-bottom: 30px;
-    display: flex;
   }
 
   .formContainer {
-    width: 100%;
+    width: 90%;
   }
 }
