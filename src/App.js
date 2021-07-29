@@ -70,13 +70,13 @@ function App() {
 
           <Switch>
             <Route path="/" exact component={Home} />
-            <Route path="/createpost" exact component={CreatePost} />
-            <Route path="/post/:id" exact component={Post} />
-            <Route path="/registration" exact component={Registration} />
-            <Route path="/login" exact component={Login} />
-            <Route path="/profile/:id" exact component={Profile} />
-            <Route path="/changepassword" exact component={ChangePassword} />
-            <Route path="*" exact component={PageNotFound} />
+            <Route path="/createpost" component={CreatePost} />
+            <Route path="/post/:id" component={Post} />
+            <Route path="/registration" component={Registration} />
+            <Route path="/login" component={Login} />
+            <Route path="/profile/:id" component={Profile} />
+            <Route path="/changepassword" component={ChangePassword} />
+            <Route path="*" component={PageNotFound} />
           </Switch>
         </Router>
       </AuthContext.Provider>

@@ -37,7 +37,7 @@ function CreatePost() {
     <div className="createPostPage">
       <Formik
         initialValues={initialValues}
-        onSubmit={onSubmit}
+        // onSubmit={onSubmit}
         validationSchema={validationSchema}
       >
         <Form className="formContainer">

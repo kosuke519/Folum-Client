@@ -1,36 +1,40 @@
-import React from "react";
-import { Formik, Form, Field, ErrorMessage, yupToFormErrors } from "formik";
-import * as Yup from "yup";
-import axios from "axios";
-import { useHistory } from "react-router-dom";
+import React from 'react';
+import { Formik, Form, Field, ErrorMessage, yupToFormErrors } from 'formik';
+import * as Yup from 'yup';
+// import axios from "axios";
+import { useHistory } from 'react-router-dom';
 function Registration() {
   const initialValues = {
-    username: "",
-    password: "",
+    username: '',
+    password: '',
   };
 
-  let history = useHistory("");
+  const history = useHistory('');
+
+  const ClickBack = () => {
+    history.push('login');
+  };
   const validationSchema = Yup.object().shape({
     username: Yup.string()
-      .min(3, "3文字以上で入力してください")
-      .max(15, "15文字以下で入力してください")
-      .required("ユーザー名を入力してください"),
+      .min(3, '3文字以上で入力してください')
+      .max(15)
+      .required('ユーザー名を入力してください'),
     password: Yup.string()
-      .min(8, "8文字以上で入力してください")
-      .max(15, "15文字以下で入力してください")
-      .required("パスワードを入力してください"),
+      .min(8, '8文字以上で入力してください')
+      .max(15, '15文字以下で入力してください')
+      .required('パスワードを入力してください'),
   });
 
-  const onSubmit = (data) => {
-    axios.post("https://forum-5.herokuapp.com/auth", data).then(() => {
-      console.log(data);
-    });
-  };
+  // const onSubmit = (data) => {
+  //   axios.post("http://localhost:3001/auth", data).then(() => {
+  //     console.log(data);
+  //   });
+  // };
   return (
     <div className="formContainer">
       <Formik
         initialValues={initialValues}
-        onSubmit={onSubmit}
+        // onSubmit={onSubmit}
         validationSchema={validationSchema}
       >
         <Form className="formic">
@@ -49,7 +53,9 @@ function Registration() {
             name="password"
             placeholder="パスワードを入力してください"
           />
-          <button type="submit">登録する</button>
+          <button onClick={ClickBack} type="submit">
+            登録する
+          </button>
         </Form>
       </Formik>
     </div>
