@@ -26,30 +26,35 @@ function Registration() {
       console.log(data);
     });
   };
+
   return (
-    <div className="formContainer">
+    <div>
       <Formik
         initialValues={initialValues}
         onSubmit={onSubmit}
         validationSchema={validationSchema}
       >
-        <Form className="formic">
-          <label>ユーザーネーム</label>
+        <Form className="formContainer">
+          <label>Username: </label>
           <ErrorMessage name="username" component="span" />
           <Field
+            autocomplete="off"
             id="inputCreatePost"
             name="username"
-            placeholder="ユーザーネームを入力してください"
+            placeholder="(Ex. John123...)"
           />
-          <label>パスワード</label>
+
+          <label>Password: </label>
           <ErrorMessage name="password" component="span" />
           <Field
+            autocomplete="off"
             type="password"
             id="inputCreatePost"
             name="password"
-            placeholder="パスワードを入力してください"
+            placeholder="Your Password..."
           />
-          <button type="submit">登録する</button>
+
+          <button type="submit"> Register</button>
         </Form>
       </Formik>
     </div>
