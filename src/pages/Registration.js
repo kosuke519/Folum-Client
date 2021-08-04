@@ -1,13 +1,15 @@
 import React from 'react';
 import { Formik, Form, Field, ErrorMessage, yupToFormErrors } from 'formik';
 import * as Yup from 'yup';
-
+import axios from 'axios';
+import { useHistory } from 'react-router-dom';
 function Registration() {
   const initialValues = {
     username: '',
     password: '',
   };
 
+  let history = useHistory('');
   const validationSchema = Yup.object().shape({
     username: Yup.string()
       .min(3, '3文字以上で入力してください')
@@ -19,16 +21,16 @@ function Registration() {
       .required('パスワードを入力してください'),
   });
 
-  // const onSubmit = (data) => {
-  //   axios.post("http://localhost:3001/auth", data).then(() => {
-  //     console.log(data);
-  //   });
-  // };
+  const onSubmit = (data) => {
+    axios.post('http://localhost:3001/auth', data).then(() => {
+      console.log(data);
+    });
+  };
   return (
     <div className="formContainer">
       <Formik
         initialValues={initialValues}
-        // onSubmit={onSubmit}
+        onSubmit={onSubmit}
         validationSchema={validationSchema}
       >
         <Form className="formic">
