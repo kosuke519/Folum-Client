@@ -1,15 +1,12 @@
 import React from 'react';
 import { Formik, Form, Field, ErrorMessage, yupToFormErrors } from 'formik';
 import * as Yup from 'yup';
-// import axios from "axios";
-import { useHistory } from 'react-router-dom';
+
 function Registration() {
   const initialValues = {
     username: '',
     password: '',
   };
-
-  const history = useHistory('');
 
   const validationSchema = Yup.object().shape({
     username: Yup.string()
