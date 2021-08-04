@@ -11,9 +11,6 @@ function Registration() {
 
   const history = useHistory('');
 
-  const ClickBack = () => {
-    history.push('login');
-  };
   const validationSchema = Yup.object().shape({
     username: Yup.string()
       .min(3, '3文字以上で入力してください')
@@ -53,9 +50,7 @@ function Registration() {
             name="password"
             placeholder="パスワードを入力してください"
           />
-          <button onClick={ClickBack} type="submit">
-            登録する
-          </button>
+          <button type="submit">登録する</button>
         </Form>
       </Formik>
     </div>
